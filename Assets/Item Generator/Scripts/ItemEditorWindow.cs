@@ -218,7 +218,6 @@ public class ItemEditorWindow : EditorWindow
     }
     private void SaveItem()
     {
-        // Serialize the list of templates to JSON
         Template.ItemTemplates itemsData = new Template.ItemTemplates
         {
             items = itemList
@@ -226,10 +225,8 @@ public class ItemEditorWindow : EditorWindow
 
         string json = JsonUtility.ToJson(itemsData, true);
 
-        // Write the JSON data to the file
         File.WriteAllText(JSON_FILE_PATH, json);
 
-        // Check if a template is selected
         if (selectedItemIndex >= 0 && selectedItemIndex < itemList.Count)
         {
             Template.ItemTemplate selectedItem = itemList[selectedItemIndex];
@@ -244,7 +241,6 @@ public class ItemEditorWindow : EditorWindow
                 CreateItemObjectFromItemTemplate();
             }
         }
-        // Refresh the AssetDatabase to make the file visible in Unity's Project window
         AssetDatabase.Refresh();
     }
     private void CreateItemObjectFromItemTemplate()
