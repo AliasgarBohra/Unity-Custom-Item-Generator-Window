@@ -49,8 +49,8 @@ public class ItemEditorWindow : EditorWindow
 
         GUILayout.Space(5);
 
-        GUILayout.Label("Item Content Reference", EditorStyles.boldLabel);
-        itemHolder = EditorGUILayout.ObjectField("Content", itemHolder, typeof(GameObject), true) as GameObject;
+        GUILayout.Label("Item Holder", EditorStyles.boldLabel);
+        itemHolder = EditorGUILayout.ObjectField("Item Holder", itemHolder, typeof(GameObject), true) as GameObject;
 
         if (itemPrefab != null && itemHolder != null)
         {
@@ -262,7 +262,7 @@ public class ItemEditorWindow : EditorWindow
         itemObject.name = itemTemplate.itemId;
         itemObject.transform.GetChild(0).GetComponent<Text>().text = itemTemplate.itemName;
         itemObject.transform.GetChild(1).GetComponent<Image>().sprite = itemTemplate.itemImage;
-        itemObject.transform.GetChild(2).GetComponent<Text>().text = itemTemplate.itemPrice.ToString();
+        itemObject.transform.GetChild(2).GetComponent<Text>().text = "$" + itemTemplate.itemPrice;
     }
     #endregion
 }

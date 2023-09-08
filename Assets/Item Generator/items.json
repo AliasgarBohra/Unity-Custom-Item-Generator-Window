@@ -1,3 +1,28 @@
 {
-    "items": []
+    "items": [
+        {
+            "itemId": "Item",
+            "itemName": "Sword",
+            "itemImage": {
+                "instanceID": 32116
+            },
+            "itemPrice": 5
+        },
+        {
+            "itemId": "Item 1",
+            "itemName": "Gun",
+            "itemImage": {
+                "instanceID": 32112
+            },
+            "itemPrice": 50
+        },
+        {
+            "itemId": "Item 2",
+            "itemName": "Cannon Gun",
+            "itemImage": {
+                "instanceID": 32120
+            },
+            "itemPrice": 100
+        }
+    ]
 }
